@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RESHINE INDUSTRY FZE | 光明线缆 — Electrical Wires, Switches & Lamp Holders</title>
+  <title>RESHINE INDUSTRY FZE | 瑞昕工业 — Electrical Wires, Switches & Lamp Holders</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@300;400;500;600;700&family=Source+Serif+4:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'Noto Sans SC', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            sans: ['Manrope', 'Noto Serif SC', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            serif: ['Source Serif 4', 'Noto Serif SC', 'serif'],
           },
           colors: {
             stone: {
@@ -38,11 +39,14 @@
   </script>
   <style>
     body {
-      font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Manrope', 'Noto Serif SC', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: #F9F8F6;
       color: #161615;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
+    }
+    h1, h2, h3 {
+      font-family: 'Source Serif 4', 'Noto Serif SC', serif;
     }
     .hairline-border {
       border-color: #E5E2DC;
@@ -72,7 +76,7 @@
             RESHINE INDUSTRY FZE
           </span>
           <span id="navBrandSub" class="text-[11px] text-stone-500 tracking-wide">
-            光明线缆 · Ogun Guangdong FTZ, Nigeria
+            瑞昕工业 · Ogun Guangdong FTZ, Nigeria
           </span>
         </div>
       </a>
@@ -483,7 +487,7 @@
       <div class="flex items-center gap-3">
         <span id="footerBrandName" class="font-semibold tracking-wider uppercase text-stone-900">RESHINE INDUSTRY FZE</span>
         <span>·</span>
-        <span id="footerCopyText">© 2026 RESHINE INDUSTRY FZE (光明线缆). All rights reserved.</span>
+        <span id="footerCopyText">© 2026 RESHINE INDUSTRY FZE (瑞昕工业). All rights reserved.</span>
       </div>
       <div class="flex items-center gap-5">
         <button type="button" id="btnOpenSettings" class="text-stone-400 hover:text-stone-900 transition-colors underline underline-offset-4">
@@ -533,7 +537,7 @@
         </div>
         <div>
           <label for="setBrandZh" class="block text-stone-600 mb-1">中文公司简称 (Company Name ZH)</label>
-          <input id="setBrandZh" type="text" value="光明线缆" class="w-full px-3 py-2 bg-stone-50 border hairline-border text-stone-900" />
+          <input id="setBrandZh" type="text" value="瑞昕工业" class="w-full px-3 py-2 bg-stone-50 border hairline-border text-stone-900" />
         </div>
         <div>
           <label for="setEmail" class="block text-stone-600 mb-1">联系邮箱 (Contact Email)</label>
@@ -582,7 +586,7 @@
           heroCaptionLeft: '核心产品系列 — 无氧铜电线电缆 · 建筑与工业开关 · 陶瓷与黄铜灯座',
           aboutTitle: '关于我们',
           aboutLead: '从高导电无氧铜线缆到每一次清脆可靠的开关通断，我们致力于将严谨的电气工程标准融入日常建筑与工业空间。',
-          aboutBody: '光明线缆（RESHINE INDUSTRY FZE）立足于尼日利亚奥贡广东自贸区（Ogun Guangdong Free Trade Zone, Igbesa），专注于电线电缆、建筑与工业控制开关及照明灯座配件的本地化供应与制造。我们长期服务于建筑工程承包商、电力基础设施项目、灯具制造商及五金电气批发渠道，所有产品均严格遵循 IEC、BS 及尼日利亚 SONCAP 安全规范，经过严苛的导体电阻、耐压绝缘与阻燃检测。',
+          aboutBody: '瑞昕工业（RESHINE INDUSTRY FZE）立足于尼日利亚奥贡广东自贸区（Ogun Guangdong Free Trade Zone, Igbesa），专注于电线电缆、建筑与工业控制开关及照明灯座配件的本地化供应与制造。我们长期服务于建筑工程承包商、电力基础设施项目、灯具制造商及五金电气批发渠道，所有产品均严格遵循 IEC、BS 及尼日利亚 SONCAP 安全规范，经过严苛的导体电阻、耐压绝缘与阻燃检测。',
           metric1Label: '高纯度无氧铜导体 (OFC Copper)',
           metric2Label: '开关机械通断寿命测试',
           metric3Label: '高频陶瓷灯座持续耐温等级',
@@ -837,7 +841,7 @@
         activeProductId: null,
         brand: {
           brandEn: 'RESHINE INDUSTRY FZE',
-          brandZh: '光明线缆',
+          brandZh: '瑞昕工业',
           email: 'info@reshineindustry.com',
           phone: '+234 901 533 3333',
           addr: 'Ogun Guangdong Free Trade Zone, Igbesa, Ogun State, Nigeria'
@@ -1174,7 +1178,7 @@
         document.getElementById('settingsForm').addEventListener('submit', function (e) {
           e.preventDefault();
           state.brand.brandEn = document.getElementById('setBrandEn').value.trim() || 'RESHINE INDUSTRY FZE';
-          state.brand.brandZh = document.getElementById('setBrandZh').value.trim() || '光明线缆';
+          state.brand.brandZh = document.getElementById('setBrandZh').value.trim() || '瑞昕工业';
           state.brand.email = document.getElementById('setEmail').value.trim() || 'info@reshineindustry.com';
           state.brand.phone = document.getElementById('setPhone').value.trim() || '+234 901 533 3333';
           state.brand.addr = document.getElementById('setAddr').value.trim() || 'Ogun Guangdong Free Trade Zone, Igbesa, Ogun State, Nigeria';
