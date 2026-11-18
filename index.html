@@ -400,12 +400,22 @@
 
           <!-- Right: Clean Minimalist Contact Form -->
           <div class="lg:col-span-7">
-            <form id="contactForm" class="bg-white p-8 sm:p-10 border hairline-border rounded-sm space-y-6 shadow-sm">
+            <form
+              id="contactForm"
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              class="bg-white p-8 sm:p-10 border hairline-border rounded-sm space-y-6 shadow-sm"
+            >
+              <input type="hidden" name="access_key" value="109db712-7021-4a94-9ea7-f9cd41ff2935">
+              <input type="hidden" name="subject" value="New inquiry from the RESHINE website">
+              <input type="hidden" name="from_name" value="RESHINE Website">
+              <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label for="inputName" id="lblFormName" class="block text-xs text-stone-600 mb-2">您的姓名 *</label>
                   <input
                     id="inputName"
+                    name="name"
                     type="text"
                     required
                     placeholder="Name"
@@ -416,6 +426,7 @@
                   <label for="inputEmail" id="lblFormEmail" class="block text-xs text-stone-600 mb-2">电子邮箱 *</label>
                   <input
                     id="inputEmail"
+                    name="email"
                     type="email"
                     required
                     placeholder="name@company.com"
@@ -428,6 +439,7 @@
                 <label for="inputSubject" id="lblFormSubject" class="block text-xs text-stone-600 mb-2">咨询主题 / 感兴趣的产品系列</label>
                 <input
                   id="inputSubject"
+                  name="product_subject"
                   type="text"
                   placeholder="例如：电线电缆 / 墙壁开关 / 灯座产品手册或合作咨询"
                   class="w-full px-3.5 py-2.5 bg-stone-50 border hairline-border rounded-sm text-sm text-stone-900 focus:outline-none focus:border-stone-900 transition-colors"
@@ -438,6 +450,7 @@
                 <label for="inputMessage" id="lblFormMessage" class="block text-xs text-stone-600 mb-2">留言内容 *</label>
                 <textarea
                   id="inputMessage"
+                  name="message"
                   rows="4"
                   required
                   placeholder="请简述您的合作意向或需要咨询的产品规格..."
@@ -607,7 +620,8 @@
           formPrivacyNote: '我们通常会在 1 个工作日内通过邮件回复您。',
           btnSubmitContact: '发送信息',
           btnSettings: '网站信息设置 / 导出 HTML',
-          toastSent: '感谢您的留言，已为您打开邮件客户端发送信息。',
+          toastSent: '感谢您的留言，我们已收到您的信息。',
+          toastFailed: '发送失败，请稍后重试。',
           toastSaved: '公司信息已更新。'
         },
         en: {
@@ -662,7 +676,8 @@
           formPrivacyNote: 'We typically respond within one business day.',
           btnSubmitContact: 'Send Message',
           btnSettings: 'Site Settings / Export HTML',
-          toastSent: 'Thank you. Opening your email client to send your message.',
+          toastSent: 'Thank you. Your message has been sent.',
+          toastFailed: 'Your message could not be sent. Please try again.',
           toastSaved: 'Company profile updated.'
         }
       };
@@ -1104,26 +1119,44 @@
         // Contact Us form submission
         document.getElementById('contactForm').addEventListener('submit', function (e) {
           e.preventDefault();
-          const name = document.getElementById('inputName').value.trim();
-          const email = document.getElementById('inputEmail').value.trim();
-          const subject = document.getElementById('inputSubject').value.trim() || 'Website Inquiry';
-          const message = document.getElementById('inputMessage').value.trim();
+          const form = e.currentTarget;
+          const submitButton = document.getElementById('btnSubmitContact');
+          const subject = document.getElementById('inputSubject').value.trim();
 
-          const bodyLines = [
-            'Name: ' + name,
-            'Email: ' + email,
-            'Subject: ' + subject,
-            '',
-            message
-          ].join('\n');
+          if (subject) {
+            form.querySelector('input[name="subject"]').value =
+              '[' + state.brand.brandEn + '] ' + subject;
+          } else {
+            form.querySelector('input[name="subject"]').value =
+              '[' + state.brand.brandEn + '] Website Inquiry';
+          }
 
-          showToast(I18N[state.lang].toastSent);
-          const mailto = 'mailto:' + state.brand.email +
-            '?subject=' + encodeURIComponent('[' + state.brand.brandEn + '] ' + subject) +
-            '&body=' + encodeURIComponent(bodyLines);
-          const a = document.createElement('a');
-          a.href = mailto;
-          a.click();
+          submitButton.disabled = true;
+          submitButton.classList.add('opacity-60', 'cursor-not-allowed');
+
+          fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          })
+            .then(function (response) {
+              return response.json();
+            })
+            .then(function (result) {
+              if (result.success) {
+                showToast(I18N[state.lang].toastSent);
+                form.reset();
+              } else {
+                throw new Error(result.message || 'Submission failed');
+              }
+            })
+            .catch(function () {
+              showToast(I18N[state.lang].toastFailed);
+            })
+            .finally(function () {
+              submitButton.disabled = false;
+              submitButton.classList.remove('opacity-60', 'cursor-not-allowed');
+            });
         });
 
         // Settings Modal
