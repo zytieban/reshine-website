@@ -109,13 +109,15 @@
       background: #C7C2B9;
       border-radius: 3px;
     }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 </head>
 <body class="min-h-screen flex flex-col selection:bg-stone-900 selection:text-stone-50">
 
   <!-- TOP CORPORATE UTILITY BAR (Flagship Global Enterprise Style) -->
   <div class="bg-stone-950 text-stone-400 text-[11px] border-b hairline-dark hidden sm:block">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 h-9 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-9 flex items-center justify-between">
       <div class="flex items-center gap-4 tracking-wide">
         <span id="topBarRegion" class="text-stone-300">Ogun Guangdong Free Trade Zone, Nigeria</span>
         <span class="text-stone-700">|</span>
@@ -131,26 +133,26 @@
 
   <!-- FLAGSHIP STICKY HEADER WITH MEGA-MENU & SEARCH -->
   <header class="sticky top-0 z-40 bg-stone-50/92 backdrop-blur-md border-b hairline">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between gap-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between gap-3 sm:gap-6">
       <!-- Brand Identity -->
-      <a href="#top" class="flex items-center gap-3.5 group shrink-0">
-        <div class="w-9 h-9 bg-stone-950 text-bronze-300 flex items-center justify-center rounded-sm border border-stone-800 group-hover:bg-stone-800 transition-colors">
+      <a href="#top" class="flex items-center gap-2.5 sm:gap-3.5 group min-w-0 shrink">
+        <div class="w-8 h-8 sm:w-9 sm:h-9 bg-stone-950 text-bronze-300 flex items-center justify-center rounded-sm border border-stone-800 group-hover:bg-stone-800 transition-colors shrink-0">
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
           </svg>
         </div>
         <div class="flex flex-col">
-          <span id="navBrandTitle" class="text-xs sm:text-sm font-semibold tracking-[0.14em] uppercase text-stone-950">
+          <span id="navBrandTitle" class="text-xs sm:text-sm font-semibold tracking-[0.1em] sm:tracking-[0.14em] uppercase text-stone-950 whitespace-nowrap truncate">
             RESHINE INDUSTRY FZE
           </span>
-          <span id="navBrandSub" class="text-[11px] text-stone-500 tracking-wider">
+          <span id="navBrandSub" class="hidden sm:block text-[11px] text-stone-500 tracking-wider whitespace-nowrap truncate max-w-[200px]">
             瑞昕工业 · 建筑与工业电气
           </span>
         </div>
       </a>
 
       <!-- Primary Desktop Navigation -->
-      <nav class="hidden lg:flex items-center gap-9 text-[13px] text-stone-600 font-medium tracking-wide">
+      <nav class="hidden lg:flex items-center gap-7 xl:gap-9 text-[13px] text-stone-600 font-medium tracking-wide whitespace-nowrap shrink-0">
         <button type="button" id="btnMegaToggle" aria-expanded="false" class="inline-flex items-center gap-1.5 py-2 hover:text-stone-950 transition-colors">
           <span id="navProductsMega">产品中心</span>
           <svg id="megaChevron" class="w-3.5 h-3.5 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
@@ -165,7 +167,7 @@
       </nav>
 
       <!-- Right Controls: Search + Language Switcher + CTA -->
-      <div class="flex items-center gap-2.5 sm:gap-3.5">
+      <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
         <!-- Quick Search Trigger -->
         <button type="button" id="btnOpenSearch" aria-label="Search Products" class="p-2 text-stone-600 hover:text-stone-950 hover:bg-stone-200/60 rounded-full transition-colors">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
@@ -183,7 +185,7 @@
           </button>
         </div>
 
-        <a href="#contact" id="navCtaBtn" class="hidden sm:inline-flex items-center px-5 py-2.5 rounded-full bg-stone-950 text-stone-50 text-xs font-medium tracking-wider hover:bg-bronze-600 transition-colors">
+        <a href="#contact" id="navCtaBtn" class="hidden sm:inline-flex items-center px-5 py-2.5 rounded-full bg-stone-950 text-stone-50 text-xs font-medium tracking-wider hover:bg-bronze-600 transition-colors whitespace-nowrap">
           项目咨询
         </a>
 
@@ -198,7 +200,7 @@
 
     <!-- FLAGSHIP MEGA-MENU PANEL (Panasonic-inspired structured product directory) -->
     <div id="megaMenuPanel" class="hidden absolute left-0 right-0 top-full bg-white/98 backdrop-blur-xl border-b hairline shadow-2xl">
-      <div class="max-w-7xl mx-auto px-6 lg:px-10 py-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
           <!-- Column 1: Overview -->
           <div class="lg:col-span-3 space-y-4 lg:border-r hairline lg:pr-8">
@@ -268,7 +270,7 @@
   <main id="top" class="flex-grow">
 
     <!-- FULL-BLEED CINEMATIC FLAGSHIP HERO SHOWCASE -->
-    <section class="relative bg-stone-950 text-stone-50 overflow-hidden min-h-[600px] lg:min-h-[680px] flex flex-col justify-between">
+    <section class="relative bg-stone-950 text-stone-50 overflow-hidden min-h-[500px] sm:min-h-[620px] lg:min-h-[660px] flex flex-col justify-between">
       <!-- Background Slide Images -->
       <div class="absolute inset-0 z-0">
         <img id="heroSlideImg0" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-asset="hero" alt="RESHINE Copper Cables and Fittings" class="hero-slide-img active absolute inset-0 w-full h-full object-cover" />
@@ -280,27 +282,27 @@
       </div>
 
       <!-- Hero Content Stage -->
-      <div class="relative z-10 max-w-7xl mx-auto w-full px-6 lg:px-10 pt-20 pb-16 lg:pt-28 lg:pb-20 flex-grow flex items-center">
+      <div class="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-10 pt-12 pb-10 sm:pt-24 sm:pb-16 lg:pt-28 lg:pb-20 flex-grow flex items-center">
         <div class="max-w-2xl space-y-7">
           <div class="inline-flex items-center gap-3 text-[11px] font-mono tracking-[0.22em] uppercase text-bronze-300">
             <span class="w-8 h-[1px] bg-bronze-400"></span>
             <span id="heroEyebrow">ARCHITECTURAL & INDUSTRIAL ELECTRICAL</span>
           </div>
 
-          <h1 id="heroHeadline" class="text-3xl sm:text-5xl lg:text-[54px] font-light tracking-tight text-white leading-[1.15]">
+          <h1 id="heroHeadline" class="text-2xl sm:text-4xl lg:text-[46px] font-light tracking-tight text-white leading-[1.2] sm:min-h-[2.4em]">
             精密电力传输与现代空间电气连接
           </h1>
 
-          <p id="heroDescription" class="text-stone-300 text-base sm:text-lg font-light leading-relaxed max-w-xl">
+          <p id="heroDescription" class="text-stone-300 text-sm sm:text-base lg:text-lg font-light leading-relaxed max-w-xl sm:min-h-[4.8em]">
             我们专注于高品质电线电缆、建筑与工业级控制开关、以及耐高温陶瓷与金属灯座的制造与供应，为全球建筑工程、照明制造商与配电项目提供安全可靠的电气基础组件。
           </p>
 
-          <div class="flex flex-wrap items-center gap-4 pt-3">
-            <a href="#products" id="heroPrimaryBtn" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white text-stone-950 text-xs sm:text-sm font-medium tracking-wider hover:bg-bronze-300 transition-colors">
+          <div class="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
+            <a href="#products" id="heroPrimaryBtn" class="inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-white text-stone-950 text-xs sm:text-sm font-medium tracking-wider hover:bg-bronze-300 transition-colors whitespace-nowrap">
               <span>即刻探索产品系列</span>
               <span>→</span>
             </a>
-            <a href="#contact" id="heroSecondaryBtn" class="inline-flex items-center px-7 py-3.5 rounded-full border border-white/30 bg-white/5 backdrop-blur-sm text-white text-xs sm:text-sm font-medium tracking-wider hover:bg-white/15 hover:border-white/60 transition-colors">
+            <a href="#contact" id="heroSecondaryBtn" class="inline-flex items-center justify-center px-6 sm:px-7 py-3 sm:py-3.5 rounded-full border border-white/30 bg-white/5 backdrop-blur-sm text-white text-xs sm:text-sm font-medium tracking-wider hover:bg-white/15 hover:border-white/60 transition-colors whitespace-nowrap">
               联系工程团队
             </a>
           </div>
@@ -309,9 +311,9 @@
 
       <!-- Bottom Interactive Slide Selector Bar (Enterprise Showcase Control) -->
       <div class="relative z-10 border-t hairline-dark bg-stone-950/55 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-10">
           <div class="grid grid-cols-3 divide-x divide-white/10">
-            <button type="button" data-slide="0" class="hero-tab group relative py-4 sm:py-5 pr-4 text-left transition-colors">
+            <button type="button" data-slide="0" class="hero-tab group relative py-3 sm:py-5 pr-2 sm:pr-4 text-left transition-colors">
               <div class="absolute top-0 left-0 right-0 h-[2px] bg-white/10 overflow-hidden">
                 <div id="slideProg0" class="h-full bg-bronze-400 slide-progress-active"></div>
               </div>
@@ -319,7 +321,7 @@
               <div id="heroTab0" class="text-xs sm:text-sm font-medium text-white mt-1 truncate">高纯度无氧铜线缆</div>
             </button>
 
-            <button type="button" data-slide="1" class="hero-tab group relative py-4 sm:py-5 px-4 text-left transition-colors">
+            <button type="button" data-slide="1" class="hero-tab group relative py-3 sm:py-5 px-2 sm:px-4 text-left transition-colors">
               <div class="absolute top-0 left-0 right-0 h-[2px] bg-white/10 overflow-hidden">
                 <div id="slideProg1" class="h-full bg-bronze-400 w-0"></div>
               </div>
@@ -327,7 +329,7 @@
               <div id="heroTab1" class="text-xs sm:text-sm font-medium text-stone-300 group-hover:text-white mt-1 truncate transition-colors">建筑开关与配电控制</div>
             </button>
 
-            <button type="button" data-slide="2" class="hero-tab group relative py-4 sm:py-5 pl-4 text-left transition-colors">
+            <button type="button" data-slide="2" class="hero-tab group relative py-3 sm:py-5 pl-2 sm:pl-4 text-left transition-colors">
               <div class="absolute top-0 left-0 right-0 h-[2px] bg-white/10 overflow-hidden">
                 <div id="slideProg2" class="h-full bg-bronze-400 w-0"></div>
               </div>
@@ -340,8 +342,8 @@
     </section>
 
     <!-- 01 / SOLUTIONS & CORE CAPABILITIES (Inspired by Panasonic Solutions Architecture) -->
-    <section id="business" class="py-24 sm:py-32 border-b hairline bg-stone-50">
-      <div class="max-w-7xl mx-auto px-6 lg:px-10 space-y-16">
+    <section id="business" class="py-14 sm:py-24 lg:py-28 border-b hairline bg-stone-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 space-y-10 sm:space-y-16">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
           <div class="lg:col-span-6 space-y-3">
             <div class="text-xs font-mono tracking-[0.22em] text-bronze-600 uppercase">01 / SOLUTIONS & CAPABILITIES</div>
@@ -368,7 +370,7 @@
                 </div>
               </div>
               <div class="p-7 space-y-3.5">
-                <h3 id="bCard1Title" class="text-xl font-normal text-stone-950">电线与电缆系列</h3>
+                <h3 id="bCard1Title" class="text-lg sm:text-xl font-normal text-stone-950">电线与电缆系列</h3>
                 <p id="bCard1Desc" class="text-sm text-stone-600 font-light leading-relaxed">
                   供应 THHN/THWN-2 尼龙护套建筑布电线、RVV/H05VV-F 多芯柔性护套线及低烟无卤阻燃电力电缆，色彩与线径规格齐全。
                 </p>
@@ -392,7 +394,7 @@
                 </div>
               </div>
               <div class="p-7 space-y-3.5">
-                <h3 id="bCard2Title" class="text-xl font-normal text-stone-950">开关与配电控制</h3>
+                <h3 id="bCard2Title" class="text-lg sm:text-xl font-normal text-stone-950">开关与配电控制</h3>
                 <p id="bCard2Desc" class="text-sm text-stone-600 font-light leading-relaxed">
                   涵盖现代极简纯白阻燃 PC 建筑墙壁翘板开关、工业设备旋转凸轮转换开关，以及高分断能力 DIN 导轨微型断路器。
                 </p>
@@ -416,7 +418,7 @@
                 </div>
               </div>
               <div class="p-7 space-y-3.5">
-                <h3 id="bCard3Title" class="text-xl font-normal text-stone-950">灯座与照明配件</h3>
+                <h3 id="bCard3Title" class="text-lg sm:text-xl font-normal text-stone-950">灯座与照明配件</h3>
                 <p id="bCard3Desc" class="text-sm text-stone-600 font-light leading-relaxed">
                   提供 E26/E27/E14/GU10 标准灯座，包括耐高温上釉陶瓷灯座、车削实心黄铜复古旋钮灯头及 IP65 户外防水密封灯座。
                 </p>
@@ -434,8 +436,8 @@
     </section>
 
     <!-- 02 / PRODUCT COLLECTION WITH LIVE SEARCH & CATEGORY TABS -->
-    <section id="products" class="py-24 sm:py-32 border-b hairline bg-white">
-      <div class="max-w-7xl mx-auto px-6 lg:px-10 space-y-12">
+    <section id="products" class="py-14 sm:py-24 lg:py-28 border-b hairline bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 space-y-8 sm:space-y-12">
         <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div class="space-y-3">
             <div class="text-xs font-mono tracking-[0.22em] text-bronze-600 uppercase">02 / PRODUCT COLLECTION</div>
@@ -459,17 +461,17 @@
             </div>
 
             <!-- Category Filter Pills -->
-            <div id="categoryFilterBar" class="flex flex-wrap gap-2">
-              <button type="button" data-cat="all" class="cat-pill px-4 py-2 rounded-full text-xs font-medium transition-all bg-stone-950 text-stone-50">
+            <div id="categoryFilterBar" class="flex overflow-x-auto no-scrollbar sm:flex-wrap gap-2 pb-1 sm:pb-0">
+              <button type="button" data-cat="all" class="cat-pill px-4 py-2 rounded-full text-xs font-medium transition-all whitespace-nowrap shrink-0 bg-stone-950 text-stone-50">
                 全部系列
               </button>
-              <button type="button" data-cat="wires" class="cat-pill px-4 py-2 rounded-full text-xs font-medium transition-all bg-stone-100 text-stone-600 hover:text-stone-950">
+              <button type="button" data-cat="wires" class="cat-pill px-4 py-2 rounded-full text-xs font-medium transition-all whitespace-nowrap shrink-0 bg-stone-100 text-stone-600 hover:text-stone-950">
                 电线电缆
               </button>
-              <button type="button" data-cat="switches" class="cat-pill px-4 py-2 rounded-full text-xs font-medium transition-all bg-stone-100 text-stone-600 hover:text-stone-950">
+              <button type="button" data-cat="switches" class="cat-pill px-4 py-2 rounded-full text-xs font-medium transition-all whitespace-nowrap shrink-0 bg-stone-100 text-stone-600 hover:text-stone-950">
                 开关控制
               </button>
-              <button type="button" data-cat="lampholders" class="cat-pill px-4 py-2 rounded-full text-xs font-medium transition-all bg-stone-100 text-stone-600 hover:text-stone-950">
+              <button type="button" data-cat="lampholders" class="cat-pill px-4 py-2 rounded-full text-xs font-medium transition-all whitespace-nowrap shrink-0 bg-stone-100 text-stone-600 hover:text-stone-950">
                 灯座配件
               </button>
             </div>
@@ -484,8 +486,8 @@
     </section>
 
     <!-- 03 / ENGINEERING EXCELLENCE & QUALITY METRICS (Dark Obsidian Band) -->
-    <section id="standards" class="py-24 sm:py-28 bg-stone-950 text-stone-100 border-b hairline-dark">
-      <div class="max-w-7xl mx-auto px-6 lg:px-10 space-y-16">
+    <section id="standards" class="py-14 sm:py-24 bg-stone-950 text-stone-100 border-b hairline-dark">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 space-y-10 sm:space-y-16">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
           <div class="lg:col-span-6 space-y-3">
             <div class="text-xs font-mono tracking-[0.22em] text-bronze-300 uppercase">03 / ENGINEERING & COMPLIANCE</div>
@@ -501,27 +503,27 @@
         </div>
 
         <!-- Architectural Metrics Grid (Inspired by Panasonic Corporate Data Showcase) -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-b hairline-dark divide-y sm:divide-y-0 sm:divide-x divide-white/10">
-          <div class="py-10 sm:pr-8 space-y-2">
-            <div class="text-4xl sm:text-5xl font-light font-editorial text-white tracking-tight">99.99<span class="text-2xl text-bronze-300">%</span></div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8 border-t border-b hairline-dark py-8 sm:py-10">
+          <div class="space-y-1.5">
+            <div class="text-3xl sm:text-4xl lg:text-5xl font-light font-editorial text-white tracking-tight whitespace-nowrap">99.99<span class="text-2xl text-bronze-300">%</span></div>
             <div id="metric1Label" class="text-xs text-stone-400 tracking-wide pt-1">高纯度无氧铜导体 (OFC Copper)</div>
           </div>
-          <div class="py-10 sm:px-8 space-y-2">
-            <div class="text-4xl sm:text-5xl font-light font-editorial text-white tracking-tight">100,000<span class="text-2xl text-bronze-300">+</span></div>
+          <div class="space-y-1.5 lg:border-l lg:border-white/10 lg:pl-8">
+            <div class="text-3xl sm:text-4xl lg:text-5xl font-light font-editorial text-white tracking-tight whitespace-nowrap">100,000<span class="text-2xl text-bronze-300">+</span></div>
             <div id="metric2Label" class="text-xs text-stone-400 tracking-wide pt-1">开关机械通断寿命测试</div>
           </div>
-          <div class="py-10 sm:px-8 space-y-2">
-            <div class="text-4xl sm:text-5xl font-light font-editorial text-white tracking-tight">300<span class="text-2xl text-bronze-300">°C</span></div>
+          <div class="space-y-1.5 lg:border-l lg:border-white/10 lg:pl-8">
+            <div class="text-3xl sm:text-4xl lg:text-5xl font-light font-editorial text-white tracking-tight whitespace-nowrap">300<span class="text-2xl text-bronze-300">°C</span></div>
             <div id="metric3Label" class="text-xs text-stone-400 tracking-wide pt-1">高频陶瓷灯座持续耐温等级</div>
           </div>
-          <div class="py-10 sm:pl-8 space-y-2">
-            <div class="text-4xl sm:text-5xl font-light font-editorial text-white tracking-tight">ISO <span class="text-bronze-300">9001</span></div>
+          <div class="space-y-1.5 lg:border-l lg:border-white/10 lg:pl-8">
+            <div class="text-3xl sm:text-4xl lg:text-5xl font-light font-editorial text-white tracking-tight whitespace-nowrap">ISO <span class="text-bronze-300">9001</span></div>
             <div id="metric4Label" class="text-xs text-stone-400 tracking-wide pt-1">SONCAP · NIS · IEC · BS 全流程品控</div>
           </div>
         </div>
 
         <!-- Certification Strip -->
-        <div class="flex flex-wrap items-center justify-between gap-4 text-xs text-stone-400 font-mono tracking-widest uppercase">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 text-[10px] sm:text-xs text-stone-400 font-mono tracking-wider sm:tracking-widest uppercase text-center">
           <span class="px-4 py-2 border hairline-dark rounded-sm text-stone-300">SONCAP & NIS CERTIFIED</span>
           <span class="px-4 py-2 border hairline-dark rounded-sm text-stone-300">IEC 60227 / 60669 / 60947</span>
           <span class="px-4 py-2 border hairline-dark rounded-sm text-stone-300">BRITISH STANDARDS (BS)</span>
@@ -531,8 +533,8 @@
     </section>
 
     <!-- 04 / ABOUT RESHINE (Editorial Corporate Profile) -->
-    <section id="about" class="py-24 sm:py-32 border-b hairline bg-white">
-      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <section id="about" class="py-14 sm:py-24 lg:py-28 border-b hairline bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <!-- Left Editorial Narrative -->
           <div class="lg:col-span-6 space-y-7">
@@ -576,8 +578,8 @@
 
 
     <!-- 05 / LEADERSHIP & TEAM -->
-    <section id="team" class="py-24 sm:py-32 border-b hairline bg-stone-50">
-      <div class="max-w-7xl mx-auto px-6 lg:px-10 space-y-16">
+    <section id="team" class="py-14 sm:py-24 lg:py-28 border-b hairline bg-stone-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 space-y-10 sm:space-y-16">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
           <div class="lg:col-span-6 space-y-3">
             <div class="text-xs font-mono tracking-[0.22em] text-bronze-600 uppercase">05 / LEADERSHIP &amp; TEAM</div>
@@ -686,8 +688,8 @@
     </section>
 
     <!-- 06 / CONTACT & PROJECT INQUIRY -->
-    <section id="contact" class="py-24 sm:py-32 bg-white">
-      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <section id="contact" class="py-14 sm:py-24 lg:py-28 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 items-start">
           <!-- Left: Contact Information -->
           <div class="lg:col-span-5 space-y-8">
@@ -738,7 +740,7 @@
               id="contactForm"
               action="https://api.web3forms.com/submit"
               method="POST"
-              class="bg-white p-8 sm:p-12 border hairline rounded-sm space-y-6 shadow-sm"
+              class="bg-white p-5 sm:p-10 lg:p-12 border hairline rounded-sm space-y-5 sm:space-y-6 shadow-sm"
             >
               <input type="hidden" name="access_key" value="109db712-7021-4a94-9ea7-f9cd41ff2935">
               <input type="hidden" name="subject" value="New inquiry from the RESHINE website">
@@ -800,7 +802,7 @@
                 <button
                   type="submit"
                   id="btnSubmitContact"
-                  class="px-8 py-3.5 rounded-full bg-stone-950 text-stone-50 text-xs sm:text-sm font-medium tracking-wider hover:bg-bronze-600 transition-colors shrink-0"
+                  class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-stone-950 text-stone-50 text-xs sm:text-sm font-medium tracking-wider hover:bg-bronze-600 transition-colors shrink-0"
                 >
                   发送信息
                 </button>
@@ -814,7 +816,7 @@
 
   <!-- AUTHORITATIVE MULTI-COLUMN CORPORATE FOOTER -->
   <footer class="bg-stone-950 text-stone-400 border-t hairline-dark">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-16">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b hairline-dark">
         <!-- Brand Column -->
         <div class="lg:col-span-4 space-y-4">
@@ -996,7 +998,7 @@
           eyebrowZh: 'ARCHITECTURAL & INDUSTRIAL ELECTRICAL',
           eyebrowEn: 'ARCHITECTURAL & INDUSTRIAL ELECTRICAL',
           headlineZh: '精密电力传输与现代空间电气连接',
-          headlineEn: 'Precision Power Transmission & Architectural Electrical Hardware',
+          headlineEn: 'Precision Power & Architectural Electrical',
           descZh: '我们专注于高品质电线电缆、建筑与工业级控制开关、以及耐高温陶瓷与金属灯座的制造与供应，为全球建筑工程、照明制造商与配电项目提供安全可靠的电气基础组件。',
           descEn: 'We manufacture and supply oxygen-free copper electrical wires, commercial and industrial switches, and high-temperature porcelain and solid brass lamp holders for electrical contractors, lighting OEMs, and distributors.',
           tabZh: '高纯度无氧铜线缆',
@@ -1005,8 +1007,8 @@
         {
           eyebrowZh: '02 / SWITCHING & CIRCUIT CONTROL',
           eyebrowEn: '02 / SWITCHING & CIRCUIT CONTROL',
-          headlineZh: '以建筑级触感与工业级分断守护每一处回路',
-          headlineEn: 'Architectural Tactility Meets Industrial Circuit Protection',
+          headlineZh: '建筑级开关触感与工业级回路保护',
+          headlineEn: 'Architectural Switching & Circuit Protection',
           descZh: '现代极简纯白阻燃 PC 建筑墙壁开关结合银镍合金触点，搭配高分断能力 DIN 导轨断路器与旋转凸轮开关，兼顾空间美学与 100,000+ 次机械寿命。',
           descEn: 'Minimalist pure white architectural wall switches with silver-nickel contacts, paired with high-breaking DIN-rail MCBs and industrial rotary cam switches rated for 100,000+ cycles.',
           tabZh: '建筑开关与配电控制',
@@ -1015,8 +1017,8 @@
         {
           eyebrowZh: '03 / LIGHTING INTERFACES',
           eyebrowEn: '03 / LIGHTING INTERFACES',
-          headlineZh: '300°C 耐高温高频陶瓷与精车实心黄铜灯座',
-          headlineEn: '300°C Glazed Porcelain & Solid Turned Brass Lamp Holders',
+          headlineZh: '300°C 高频陶瓷与实心黄铜灯座',
+          headlineEn: '300°C Porcelain & Solid Brass Lamp Holders',
           descZh: '涵盖 E26 / E27 / E14 / GU10 全系列照明连接接口，提供高密度上釉瓷体、H65 实心黄铜与 IP65 户外防水密封结构，稳定服务严苛照明场景。',
           descEn: 'Comprehensive E26, E27, E14, and GU10 luminaire interfaces crafted from glazed steatite porcelain, solid turned H65 brass, and IP65 weatherproof silicone-sealed housings.',
           tabZh: '陶瓷与实心黄铜灯座',
@@ -1057,9 +1059,9 @@
           megaCat2Sub: '现代建筑墙壁开关、工业旋转凸轮转换开关、DIN 导轨断路器',
           megaCat3Title: '灯座与照明配件 →',
           megaCat3Sub: 'E26/E27 耐高温上釉陶瓷灯座、实心黄铜灯头、IP65 防水灯座',
-          heroPrimaryBtn: '即刻探索产品系列',
-          heroSecondaryBtn: '联系工程团队',
-          businessTitle: '三大核心业务与电气解决方案',
+          heroPrimaryBtn: '浏览产品系列',
+          heroSecondaryBtn: '联系我们',
+          businessTitle: '核心业务与电气解决方案',
           businessSubtitle: '围绕「电力传输 · 回路控制 · 照明连接」三大基础场景，为商业建筑、工业厂房与照明制造提供完整可靠的电气硬件体系。',
           bCard1Title: '电线与电缆系列',
           bCard1Desc: '供应 THHN/THWN-2 尼龙护套建筑布电线、RVV/H05VV-F 多芯柔性护套线及低烟无卤阻燃电力电缆，色彩与线径规格齐全。',
@@ -1078,7 +1080,7 @@
           btnSpecs: '技术参数',
           btnInquireShort: '询价咨询',
           noResults: '未找到匹配的产品，请尝试其他关键词或切换分类。',
-          standardsTitle: '以严苛工程数据定义电气安全基准',
+          standardsTitle: '严苛工程数据与安全基准',
           standardsDesc: '每一批次出厂产品均通过导体直流电阻、高压介电绝缘、持续温升及阻燃老化检测，确保长期稳定运行于高负载商业与工业环境。',
           metric1Label: '高纯度无氧铜导体 (OFC Copper)',
           metric2Label: '开关机械通断寿命测试',
@@ -1121,11 +1123,11 @@
         en: {
           navProductsMega: 'Products',
           navBusiness: 'Solutions',
-          navStandards: 'Quality & Standards',
-          navAbout: 'About Us',
+          navStandards: 'Standards',
+          navAbout: 'About',
           navContact: 'Contact',
-          navTeam: 'Leadership',
-          teamTitle: 'Leadership & Engineering Team',
+          navTeam: 'Team',
+          teamTitle: 'Leadership & Team',
           teamSubtitle: 'Led by experienced specialists in electrical manufacturing, quality compliance, and regional project delivery.',
           execPhotoHint: 'EXECUTIVE PORTRAIT · 3:4',
           execRoleBadge: 'FOUNDER & MD',
@@ -1133,14 +1135,14 @@
           execTitle: 'FOUNDER & MANAGING DIRECTOR',
           execQuote: '"Leadership message placeholder: commitment to electrical safety standards, local manufacturing reliability, and long-term partner trust."',
           execBio: 'Leads corporate strategy, local manufacturing development, and long-term partner relationships.',
-          teamCard1Name: 'Head of Manufacturing & Operations',
+          teamCard1Name: 'Head of Operations',
           teamCard1Desc: 'Oversees production planning, raw material sourcing, and scalable on-time fulfillment.',
-          teamCard2Name: 'Head of Engineering & Quality Assurance',
+          teamCard2Name: 'Head of Engineering & QA',
           teamCard2Desc: 'Leads conductor testing, dielectric inspection, and SONCAP / IEC / BS compliance.',
-          teamCard3Name: 'Head of Commercial & Distribution',
+          teamCard3Name: 'Head of Commercial',
           teamCard3Desc: 'Manages commercial project supply, OEM/ODM partnerships, and West Africa wholesale channels.',
-          navCta: 'Inquire Now',
-          navSubSuffix: ' · Architectural & Industrial Electrical',
+          navCta: 'Contact Us',
+          navSubSuffix: ' · Electrical Systems',
           megaTitle: 'Architectural & Industrial Electrical Portfolio',
           megaDesc: 'Engineered foundational electrical hardware built to international compliance for commercial construction, power distribution, and luminaire OEMs.',
           megaAllLink: 'Explore Full Catalog',
@@ -1150,9 +1152,9 @@
           megaCat2Sub: 'Architectural wall rocker switches, industrial rotary cam switches, DIN-rail MCBs',
           megaCat3Title: 'Lamp Holders & Sockets →',
           megaCat3Sub: 'E26/E27 glazed porcelain holders, solid turned brass sockets, IP65 outdoor units',
-          heroPrimaryBtn: 'Explore Products',
-          heroSecondaryBtn: 'Contact Engineering',
-          businessTitle: 'Core Capabilities & Electrical Solutions',
+          heroPrimaryBtn: 'Explore Series',
+          heroSecondaryBtn: 'Contact Us',
+          businessTitle: 'Core Electrical Solutions',
           businessSubtitle: 'An integrated electrical portfolio spanning power distribution, circuit switching, and luminaire connectivity for commercial and industrial projects.',
           bCard1Title: 'Wires & Power Cables',
           bCard1Desc: 'THHN/THWN-2 nylon-jacketed building wire, RVV/H05VV-F multi-core flexible control cables, and low-smoke zero-halogen (LSZH) power cables.',
@@ -1161,7 +1163,7 @@
           bCard3Title: 'Lamp Holders & Sockets',
           bCard3Desc: 'E26, E27, E14, and GU10 sockets crafted from high-temp glazed porcelain, solid turned brass, and IP65 weatherproof silicone-sealed housings.',
           exploreCat: 'View Series',
-          productsTitle: 'Selected Product Collection',
+          productsTitle: 'Product Collection',
           searchPlaceholder: 'Filter model, material, or standard...',
           overlaySearchPh: 'Search product name, series code, or standard (e.g., THHN, IEC, E27)...',
           catAll: 'All Series',
@@ -1171,13 +1173,13 @@
           btnSpecs: 'Specifications',
           btnInquireShort: 'Inquire',
           noResults: 'No matching products found. Try another keyword or switch category.',
-          standardsTitle: 'Electrical Safety Defined by Rigorous Engineering Data',
+          standardsTitle: 'Engineering & Safety Standards',
           standardsDesc: 'Every production lot undergoes DC conductor resistance, dielectric withstand voltage, continuous thermal rise, and flame-retardant aging verification.',
           metric1Label: 'Oxygen-Free Copper Purity (OFC)',
           metric2Label: 'Mechanical Switching Cycles',
           metric3Label: 'Glazed Porcelain Thermal Rating',
           metric4Label: 'SONCAP · NIS · IEC · BS Quality System',
-          aboutTitle: 'About RESHINE INDUSTRY',
+          aboutTitle: 'About RESHINE',
           aboutLead: 'From high-conductivity oxygen-free copper conductors to tactile, precision-engineered switches and lighting sockets, we bring rigorous electrical standards to modern architectural and industrial spaces.',
           aboutBody: 'Based in the Ogun Guangdong Free Trade Zone (Igbesa, Ogun State, Nigeria), RESHINE INDUSTRY FZE specializes in the manufacturing and supply of high-purity copper electrical wires and cables, architectural and industrial switches, and durable lamp holders. We serve construction contractors, infrastructure developers, luminaire OEMs, and electrical wholesalers across Nigeria and West Africa under strict IEC, BS, and SONCAP quality standards.',
           aboutHub: 'Ogun Guangdong FTZ · Nigeria',
@@ -1220,7 +1222,7 @@
           code: 'SERIES W-01 · UL 83 / CSA',
           image: ASSETS.wires,
           nameZh: 'THHN / THWN-2 无氧铜建筑布电线',
-          nameEn: 'THHN / THWN-2 Stranded Copper Building Wire',
+          nameEn: 'THHN / THWN-2 Copper Building Wire',
           summaryZh: '14 AWG – 4/0 AWG · 600V · 90°C 耐温防潮尼龙外护套',
           summaryEn: '14 AWG – 4/0 AWG · 600V · 90°C Dry/Wet Nylon Jacket',
           descZh: '采用 99.99% 退火无氧纯铜绞合导体，外覆热塑性 PVC 绝缘层及耐油耐磨尼龙护套，适用于商业建筑穿管布线、配电盘及工业设备配电。',
@@ -1244,7 +1246,7 @@
           code: 'SERIES W-02 · IEC 60227 / CE',
           image: ASSETS.hero,
           nameZh: 'RVV / H05VV-F 多芯柔性护套电源线',
-          nameEn: 'RVV / H05VV-F Multi-Core Flexible Control Cable',
+          nameEn: 'RVV / H05VV-F Flexible Control Cable',
           summaryZh: '2–12 芯 × 0.75–6.0mm² · 300/500V · 细铜丝抗弯曲结构',
           summaryEn: '2–12 Cores × 0.75–6.0mm² · 300/500V · Fine-Stranded PVC Sheath',
           descZh: '专为商业灯具连接、自动化仪表及移动电气设备设计的多股细铜丝软护套线，具备优异的柔韧性与抗拉耐磨表现。',
@@ -1268,7 +1270,7 @@
           code: 'SERIES S-01 · UL 20 / IEC 60669',
           image: ASSETS.switches,
           nameZh: '现代极简纯白建筑墙壁开关',
-          nameEn: 'Architectural Pure White Rocker Switch',
+          nameEn: 'Pure White Architectural Wall Switch',
           summaryZh: '1开–3开 单控/双控 · 15A/16A 250V · 银镍合金大触点',
           summaryEn: '1–3 Gang 1-Way/2-Way · 15A/16A 250V · Silver-Nickel Contacts',
           descZh: '采用高阻燃抗黄变纯白 PC 面板与底座，内部配置加厚磷青铜导电件与银镍合金触点，兼顾现代建筑极简美学与长寿命电气性能。',
@@ -1292,7 +1294,7 @@
           code: 'SERIES S-02 · IEC 60947 / IEC 60898',
           image: ASSETS.switches,
           nameZh: '工业凸轮转换开关与 DIN 导轨断路器',
-          nameEn: 'Industrial Rotary Cam Switch & DIN-Rail MCB',
+          nameEn: 'Industrial Cam Switch & DIN-Rail MCB',
           summaryZh: '20A–63A · 400V/690V AC · 双电源转换与热磁过载保护',
           summaryEn: '20A–63A · 400V/690V AC · Load Transfer & Thermal-Magnetic Protection',
           descZh: '面向工业配电柜与机械设备控制，提供多档位旋转凸轮转换开关及 6kA/10kA 高分断微型断路器，实现安全隔离与短路过载保护。',
@@ -1316,7 +1318,7 @@
           code: 'SERIES L-01 · UL 496 / VDE',
           image: ASSETS.lamps,
           nameZh: 'E26 / E27 耐高温上釉高频陶瓷灯座',
-          nameEn: 'E26 / E27 High-Temp Glazed Porcelain Lamp Holder',
+          nameEn: 'E26 / E27 Glazed Porcelain Lamp Holder',
           summaryZh: '660W 250V · 300°C 耐温 · 镀镍黄铜螺壳与不锈钢弹片',
           summaryEn: '660W 250V · 300°C Rated · Glazed Steatite Ceramic & Nickel Brass',
           descZh: '采用高密度上釉高频瓷体与加厚镀镍黄铜螺套，可长期工作于 300°C 高温环境，适用于工矿照明、商业筒灯、红外加热及特种照明灯具。',
@@ -1340,7 +1342,7 @@
           code: 'SERIES L-02 · UL / CE / IP65',
           image: ASSETS.lamps,
           nameZh: '实心黄铜装饰灯头与 IP65 防水密封灯座',
-          nameEn: 'Solid Turned Brass & IP65 Weatherproof Lamp Sockets',
+          nameEn: 'Solid Brass & IP65 Waterproof Sockets',
           summaryZh: 'E26 / E27 / GU10 · 复古旋钮黄铜款与户外硅胶防水款',
           summaryEn: 'E26 / E27 / GU10 · Solid Brass Turn-Knob & IP65 Sealed Outdoor Series',
           descZh: '提供面向现代装饰吊灯的 H65 纯黄铜车削灯头（可选旋钮开关），以及面向户外景观与潮湿工业厂房的 IP65 硅胶密封防水灯座。',
@@ -1637,9 +1639,9 @@
         document.querySelectorAll('.cat-pill').forEach(function (btn) {
           const cat = btn.getAttribute('data-cat');
           if (cat === state.category) {
-            btn.className = 'cat-pill px-4 py-2 rounded-full text-xs font-medium transition-all bg-stone-950 text-stone-50';
+            btn.className = 'cat-pill px-4 py-2 rounded-full text-xs font-medium transition-all whitespace-nowrap shrink-0 bg-stone-950 text-stone-50';
           } else {
-            btn.className = 'cat-pill px-4 py-2 rounded-full text-xs font-medium transition-all bg-stone-100 text-stone-600 hover:text-stone-950';
+            btn.className = 'cat-pill px-4 py-2 rounded-full text-xs font-medium transition-all whitespace-nowrap shrink-0 bg-stone-100 text-stone-600 hover:text-stone-950';
           }
         });
 
@@ -1671,8 +1673,8 @@
                 '</div>' +
                 '<div class="p-6 sm:p-7 space-y-2.5">' +
                   '<div class="text-[10px] font-mono text-stone-400 tracking-[0.16em] uppercase">' + p.code + '</div>' +
-                  '<h3 class="text-lg font-normal text-stone-950 leading-snug">' + title + '</h3>' +
-                  '<div class="text-xs font-mono text-bronze-600 pt-0.5">' + summary + '</div>' +
+                  '<h3 class="text-base sm:text-lg font-normal text-stone-950 leading-snug sm:min-h-[3.2rem]">' + title + '</h3>' +
+                  '<div class="text-xs font-mono text-bronze-600 pt-0.5 sm:min-h-[2.2rem]">' + summary + '</div>' +
                   '<p class="text-xs text-stone-600 font-light leading-relaxed pt-1.5">' + desc + '</p>' +
                 '</div>' +
               '</div>' +
